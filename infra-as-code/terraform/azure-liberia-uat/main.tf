@@ -1,9 +1,9 @@
 provider "azurerm" {
   # whilst the `version` attribute is optional, we recommend pinning to a given version of the Provider
   subscription_id  = "${var.subscription_id}"
-  tenant_id        = "${var.tenant_id}" 
-  client_id        = "${var.client_id}"
-  client_secret    = "${var.client_secret}"
+#  tenant_id        = "${var.tenant_id}"
+#  client_id        = "${var.client_id}"
+#  client_secret    = "${var.client_secret}"
   features {}
   skip_provider_registration = true
 }
@@ -11,7 +11,7 @@ provider "azurerm" {
 terraform {
   backend "azurerm" {
       resource_group_name  = "demo-azure-rg-terraform"
-      storage_account_name = "tfstate7v0qn"
+      storage_account_name = "tfstate15kwu"
       container_name       = "demo-azure-container"
       key                  = "terraform.tfstate"
   }

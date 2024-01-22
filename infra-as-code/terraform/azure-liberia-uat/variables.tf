@@ -6,7 +6,7 @@ variable "resource_group" {
 }
 
 variable "location" {
-    default = "South India"
+    default = "South Africa North"
 }
 
 variable "db_version" {
@@ -20,7 +20,7 @@ variable "db_user" {
 variable "db_password"{}
 
 variable "subscription_id" {
-    default = "8d8fadc3-5236-461c-a0ee-00836a75c4d1"
+    default = "f07cf9be-deef-46d7-b025-fd11d032da4f"
 }
 
 variable "tenant_id" {
