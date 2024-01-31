@@ -27,6 +27,13 @@ resource "azurerm_postgresql_flexible_server" "default" {
   storage_mb             = "${var.storage_mb}"
   sku_name               = "${var.sku_tier}"
   backup_retention_days  = 7
+  lifecycle {
+    ignore_changes = [
+      # Ignore changes to tags, e.g. because a management agent
+      # updates these based on some ruleset managed elsewhere.
+      zone,
+    ]
+  }
 }
 
 resource "azurerm_postgresql_flexible_server_database" "default" {
