@@ -17,3 +17,20 @@ output "db_user" {
 output "cluster_name" {
   value = var.environment
 }
+
+
+output "zookeeper" {
+  value= module.zookeeper.storage_ids
+}
+
+output "kafka" {
+  value= module.kafka.storage_ids
+}
+
+output "es-master" {
+  value= module.es-master.storage_ids
+}
+
+output "es-data-v1" {
+  value= module.es-data-v1.storage_ids
+}

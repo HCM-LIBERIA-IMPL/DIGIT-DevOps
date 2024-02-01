@@ -5,7 +5,7 @@ global:
 cluster-configs:
   namespaces:
     create: true
-    values: [ backbone, cert-manager, egov, es-cluster, kafka-cluster, logging, monitoring, playground, zookeeper-cluster ]
+    values: [ backbone, cert-manager, egov, es-cluster-v8,es-cluster, kafka-cluster, logging, monitoring, playground, zookeeper-cluster ]
 
   root-ingress:
     cert-issuer: letsencrypt-prod
@@ -624,12 +624,12 @@ kafka-v2:
   persistence:
     enabled: true
     azure:
-      - diskName: "diskName" ## add diskName
-        diskURI: ## Azure diskURI
-      - diskName: "diskName" ## add diskName
-        diskURI: ## Azure diskURI
-      - diskName: "diskName"  ## add diskName
-        diskURI:  ## Azure diskURI
+      - diskName: "kafka-0" ## add diskName
+        diskURI: "/subscriptions/f07cf9be-deef-46d7-b025-fd11d032da4f/resourceGroups/MC_demo-azure-rg-terraform_demo-azure-terraform_southafricanorth/providers/Microsoft.Compute/disks/kafka-0"## Azure diskURI
+      - diskName: "kafka-1" ## add diskName
+        diskURI: "/subscriptions/f07cf9be-deef-46d7-b025-fd11d032da4f/resourceGroups/MC_demo-azure-rg-terraform_demo-azure-terraform_southafricanorth/providers/Microsoft.Compute/disks/kafka-1"## Azure diskURI
+      - diskName: "kafka-2"  ## add diskName
+        diskURI: "/subscriptions/f07cf9be-deef-46d7-b025-fd11d032da4f/resourceGroups/MC_demo-azure-rg-terraform_demo-azure-terraform_southafricanorth/providers/Microsoft.Compute/disks/kafka-2"## Azure diskURI
   zookeeperHosts: "zookeeper-v2.zookeeper-cluster:2181/kafka-v2"
 
   heapOptions: "-Xms704M -Xmx704M"
@@ -659,12 +659,12 @@ zookeeper-v2:
   persistence:
     enabled: true
     azure:
-      - diskName: "diskName" ## add diskName
-        diskURI: ## Azure diskURI
-      - diskName: "diskName" ## add diskName
-        diskURI: ## Azure diskURI
-      - diskName: "diskName"  ## add diskName
-        diskURI:  ## Azure diskURI
+      - diskName: "zookeeper-0" ## add diskName
+        diskURI: "/subscriptions/f07cf9be-deef-46d7-b025-fd11d032da4f/resourceGroups/MC_demo-azure-rg-terraform_demo-azure-terraform_southafricanorth/providers/Microsoft.Compute/disks/zookeeper-0"## Azure diskURI
+      - diskName: "zookeeper-1" ## add diskName
+        diskURI: "/subscriptions/f07cf9be-deef-46d7-b025-fd11d032da4f/resourceGroups/MC_demo-azure-rg-terraform_demo-azure-terraform_southafricanorth/providers/Microsoft.Compute/disks/zookeeper-1"## Azure diskURI
+      - diskName: "zookeeper-2"  ## add diskName
+        diskURI: "/subscriptions/f07cf9be-deef-46d7-b025-fd11d032da4f/resourceGroups/MC_demo-azure-rg-terraform_demo-azure-terraform_southafricanorth/providers/Microsoft.Compute/disks/zookeeper-2"## Azure diskURI
 
   ## Zookeeper JVM Heap Option
   heapOptions: "-Xms256M -Xmx256M"
@@ -683,19 +683,19 @@ elasticsearch-data:
   persistence:
     enabled: true
     azure:
-      - diskName: "diskName" ## add diskName
-        diskURI: ## Azure diskURI
-      - diskName: "diskName" ## add diskName
-        diskURI: ## Azure diskURI
-      - diskName: "diskName"  ## add diskName
-        diskURI:  ## Azure diskURI
+      - diskName: "es-data-v1-0" ## add diskName
+        diskURI: "/subscriptions/f07cf9be-deef-46d7-b025-fd11d032da4f/resourceGroups/MC_demo-azure-rg-terraform_demo-azure-terraform_southafricanorth/providers/Microsoft.Compute/disks/es-data-v1-0"## Azure diskURI
+      - diskName: "es-data-v1-1" ## add diskName
+        diskURI: "/subscriptions/f07cf9be-deef-46d7-b025-fd11d032da4f/resourceGroups/MC_demo-azure-rg-terraform_demo-azure-terraform_southafricanorth/providers/Microsoft.Compute/disks/es-data-v1-1"## Azure diskURI
+      - diskName: "es-data-v1-2"  ## add diskName
+        diskURI: "/subscriptions/f07cf9be-deef-46d7-b025-fd11d032da4f/resourceGroups/MC_demo-azure-rg-terraform_demo-azure-terraform_southafricanorth/providers/Microsoft.Compute/disks/es-data-v1-2"## Azure diskURI
 
-  esJavaOpts: "-Xmx1g -Xms1g"
+  esJavaOpts: "-Xmx3g -Xms3g"
   resources:
     requests:
-      memory: "2Gi"
+      memory: "4Gi"
     limits:
-      memory: "2Gi"
+      memory: "4Gi"
 
 elasticsearch-master:
   namespace: es-cluster-v8
@@ -705,12 +705,12 @@ elasticsearch-master:
   persistence:
     enabled: true
     azure:
-      - diskName: "diskName" ## add diskName
-        diskURI: ## Azure diskURI
-      - diskName: "diskName" ## add diskName
-        diskURI: ## Azure diskURI
-      - diskName: "diskName"  ## add diskName
-        diskURI:  ## Azure diskURI
+      - diskName: "es-master-0" ## add diskName
+        diskURI: "/subscriptions/f07cf9be-deef-46d7-b025-fd11d032da4f/resourceGroups/MC_demo-azure-rg-terraform_demo-azure-terraform_southafricanorth/providers/Microsoft.Compute/disks/es-master-0"## Azure diskURI
+      - diskName: "es-master-1" ## add diskName
+        diskURI: "/subscriptions/f07cf9be-deef-46d7-b025-fd11d032da4f/resourceGroups/MC_demo-azure-rg-terraform_demo-azure-terraform_southafricanorth/providers/Microsoft.Compute/disks/es-master-1"## Azure diskURI
+      - diskName: "es-master-2"  ## add diskName
+        diskURI: "/subscriptions/f07cf9be-deef-46d7-b025-fd11d032da4f/resourceGroups/MC_demo-azure-rg-terraform_demo-azure-terraform_southafricanorth/providers/Microsoft.Compute/disks/es-master-2"## Azure diskURI
 
   esJavaOpts: "-Xmx448m -Xms448m"
   resources:

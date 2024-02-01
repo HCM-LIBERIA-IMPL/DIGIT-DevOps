@@ -5,3 +5,5 @@ creation_rules:
         # eGOV Internal ------------------------------------------------------------------------------------------------------------- #
         - path_regex: environments\\egov-liberia-uat\-secrets\.yaml$
           azure_keyvault: "https://demo-azure-terraform.vault.azure.net/keys/demo-azure-terraform/79b13dab991c43ad9877a5ebed76f1cf"
+        - path_regex: environments\\egov-liberia-prod\-secrets\.yaml$
+          azure_keyvault: "https://demo-azure-terraform.vault.azure.net/keys/demo-azure-terraform/79b13dab991c43ad9877a5ebed76f1cf"

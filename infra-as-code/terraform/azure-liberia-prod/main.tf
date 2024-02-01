@@ -121,3 +121,49 @@ module "postgres-db" {
   network_security_group_id = azurerm_network_security_group.db_nsg.id
   virtual_network_id = azurerm_virtual_network.example.id
 }
+
+module "zookeeper" {
+  source = "../modules/storage/azure"
+  environment = "${var.environment}"
+  itemCount = "3"
+  disk_prefix = "zookeeper"
+  location = "${var.location}"
+  resource_group = "${module.kubernetes.node_resource_group}"
+  storage_sku = "Premium_LRS"
+  disk_size_gb = "10"
+
+}
+
+module "kafka" {
+  source = "../modules/storage/azure"
+  environment = "${var.environment}"
+  itemCount = "3"
+  disk_prefix = "kafka"
+  location = "${var.location}"
+  resource_group = "${module.kubernetes.node_resource_group}"
+  storage_sku = "Standard_LRS"
+  disk_size_gb = "250"
+
+}
+module "es-master" {
+  source = "../modules/storage/azure"
+  environment = "${var.environment}"
+  itemCount = "3"
+  disk_prefix = "es-master"
+  location = "${var.location}"
+  resource_group = "${module.kubernetes.node_resource_group}"
+  storage_sku = "Premium_LRS"
+  disk_size_gb = "10"
+
+}
+module "es-data-v1" {
+  source = "../modules/storage/azure"
+  environment = "${var.environment}"
+  itemCount = "3"
+  disk_prefix = "es-data-v1"
+  location = "${var.location}"
+  resource_group = "${module.kubernetes.node_resource_group}"
+  storage_sku = "Premium_LRS"
+  disk_size_gb = "100"
+
+}
