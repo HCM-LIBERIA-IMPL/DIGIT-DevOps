@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "cainjector.fullname" . }}
-  namespace: {{ .Values.namespace }}
+  namespace: {{ .Release.Namespace | quote }}
   labels:
     app: {{ include "cainjector.name" . }}
     app.kubernetes.io/name: {{ include "cainjector.name" . }}

@@ -20,7 +20,7 @@ initContainers:
 # Container Configs
 image:
   repository: "egov-user"
-replicas: "1"
+replicas: "2"
 healthChecks:
   enabled: true
   livenessProbePath: "/user/health"
@@ -41,7 +41,7 @@ roles-state-level: "true"
 citizen-registration-withlogin: "true"
 citizen-otp-fixed: "123456"
 citizen-otp-fixed-enabled: "true"
-heap: "-Xmx384m -Xms256m"
+heap: "-Xmx192m -Xms192m"
 java-args: ""
 
 # Additional Container Envs
@@ -89,6 +89,15 @@ env: |
       configMapKeyRef:
         name: egov-config
         key: egov-state-level-tenant-id
+  - name: STATE_LEVEL_TENANT_ID
+    valueFrom:
+      configMapKeyRef:
+        name: egov-config
+        key: egov-state-level-tenant-id
+  - name: EGOV_USER_MOBILE_PATTERN
+    value: "(^$|[0-9]{9,11})"
+  - name: EGOV_USER_PWD_PATTERN
+    value: "((?=.*\\d)(?=.*[a-z])(?=.*[@#$%])(?=\\S+$).*$)"
   - name: DECRYPTION_ABAC_ENABLED
     value: {{ index .Values "decryption-abac-enabled" | quote }}
   - name: KAFKA_TOPIC_AUDIT
