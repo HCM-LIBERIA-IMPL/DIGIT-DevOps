@@ -3,5 +3,5 @@ creation_rules:
         # upon creation of a file that matches the pattern *dev.yaml,
         # KMS set A is used
         # eGOV Internal ------------------------------------------------------------------------------------------------------------- #
-        - path_regex: environments/egov-demo\-secrets\.yaml$
-          kms: 'arn:aws:kms:ap-south-1:349271159511:key/29adbf26-7b85-4469-8c9e-f8050fd19a8e'
+        - path_regex: environments\\egov-liberia-uat\-secrets\.yaml$
+          azure_keyvault: "https://demo-azure-terraform.vault.azure.net/keys/demo-azure-terraform/79b13dab991c43ad9877a5ebed76f1cf"
