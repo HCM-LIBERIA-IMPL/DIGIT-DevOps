@@ -220,3 +220,9 @@ env: |
     value: "3"
   - name: EGOV_PROGRAM_MANDATE_DIVIDING_FACTOR
     value: "1.8"
+  - name: TRANSFORMER_CONSUMER_SAVE_ATTENDANCE_LOG_TOPIC
+    value: save-attendance-log
+  - name: TRANSFORMER_CONSUMER_UPDATE_ATTENDANCE_LOG_TOPIC
+    value: update-attendance-log
+  - name: TRANSFORMER_PRODUCER_ATTENDANCE_LOG_INDEX_V1_TOPIC
+    value: transformer-save-attendance-log
