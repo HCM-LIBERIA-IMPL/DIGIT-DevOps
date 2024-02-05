@@ -83,5 +83,5 @@ modules:
       - egovio/project:master-impel-82abd11612-195
       - egovio/hcm-moz-impl:develop-6a0adc0-323
       - egovio/egov-mdms-create:develop-3a53c3b-3
-      - egovio/referralmanagement:master-impel-33b545a2f6-43
+      - egovio/referralmanagement:master-impel-4d19e9e614-97
       - egovio/attendance:v1.0.0-743b0814-46
