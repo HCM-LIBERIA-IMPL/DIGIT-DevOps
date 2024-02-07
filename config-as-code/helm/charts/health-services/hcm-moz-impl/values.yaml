@@ -115,10 +115,7 @@ env: |
   - name: DHIS2_DIGIT_SEARCH_MAX_RETRY
     value: "100"
   - name: EGOV_DHIS2_HOST_URL
-    valueFrom:
-      configMapKeyRef:
-        name: hcm-moz-impl
-        key: dhis2-host
+    value: http://dhis2-url.com
   - name: EGOV_DHIS2_HOST_USERNAME
     valueFrom:
       secretKeyRef:
