@@ -774,9 +774,9 @@ hcm-moz-impl:
   cpu_limits: "250m"
   resources:
     requests:
-      memory: "2Gi"
+      memory: "3Gi"
     limits:
-      memory: "2Gi"
+      memory: "3Gi"
 attendance-service:
   tracing-enabled: true
   java-enable-debug: true

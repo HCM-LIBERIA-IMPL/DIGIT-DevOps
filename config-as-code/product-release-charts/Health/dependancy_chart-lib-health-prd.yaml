@@ -57,7 +57,7 @@ modules:
     services:
       - egovio/citizen:v1.8.0-b078fa041d-97
       - egovio/employee:v1.8.0-2ac8314b2f-116
-      - egovio/digit-ui:master-impel-liberia-ad01269416-135
+      - egovio/digit-ui:master-impel-liberia-70e14f9d74-143
   - name: m_dss   #dss
     dependencies:
       - "frontend"
@@ -81,7 +81,7 @@ modules:
       - egovio/stock:master-impel-2ea4712b0d-76
       - egovio/household:master-impel-fc710d7583-110
       - egovio/project:master-impel-82abd11612-195
-      - egovio/hcm-moz-impl:develop-6a0adc0-323
+      - egovio/hcm-moz-impl:develop-liberia-397237d-362
       - egovio/egov-mdms-create:develop-3a53c3b-3
       - egovio/referralmanagement:master-impel-4d19e9e614-97
       - egovio/attendance:v1.0.0-743b0814-46

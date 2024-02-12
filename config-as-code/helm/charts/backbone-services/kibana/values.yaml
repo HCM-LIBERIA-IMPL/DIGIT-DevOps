@@ -160,13 +160,13 @@ ingress:
     nginx.ingress.kubernetes.io/lua-resty-waf-score-threshold: "10"
     nginx.ingress.kubernetes.io/use-regex: "true"
   hosts:
-    - host: liberia-hcm.digit.org
+    - host: liberia-hcm-training.digit.org
       paths:
         - path: /kibana-upgrade
   tls: 
-   - secretName: liberia-hcm.digit.org-tls-certs
+   - secretName: liberia-hcm-training.digit.org-tls-certs
      hosts:
-       - liberia-hcm.digit.org
+       - liberia-hcm-training.digit.org
 #  hosts:
 #    - host: salama.digit.org
 #      paths:
