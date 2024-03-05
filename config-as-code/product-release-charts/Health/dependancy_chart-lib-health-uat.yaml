@@ -50,14 +50,14 @@ modules:
       - "core"
     services:
       - egovio/egf-master:v1.1.3-72f8a8f87b-15
-      - egovio/egov-hrms:health-lib-dev-37860d29e6-73
+      - egovio/egov-hrms:health-lib-dev-e13caf6f06-76
   - name: "frontend"
     dependencies:
       - "business"
     services:
       - egovio/citizen:v1.8.0-b078fa041d-97
       - egovio/employee:v1.8.0-2ac8314b2f-116
-      - egovio/digit-ui:master-impel-liberia-8dc47c5418-147
+      - egovio/digit-ui:master-impel-liberia-9d3e2d92c2-157
   - name: m_dss   #dss
     dependencies:
       - "frontend"
@@ -77,11 +77,11 @@ modules:
       - egovio/facility:master-impel-82abd11612-46
       - egovio/product:master-impel-9e32e9c097-22
       - egovio/individual:master-impel-94bad42079-183
-      - egovio/transformer:master-impel-1a5c631f82-164
+      - egovio/transformer:master-impel-c29a7c502d-170
       - egovio/stock:master-impel-2ea4712b0d-76
       - egovio/household:master-impel-fc710d7583-110
       - egovio/project:master-impel-82abd11612-195
-      - egovio/hcm-moz-impl:develop-liberia-f7a80fb-365
+      - egovio/hcm-moz-impl:develop-liberia-f8af9ad-366
       - egovio/egov-mdms-create:develop-3a53c3b-3
       - egovio/referralmanagement:master-impel-4d19e9e614-97
       - egovio/attendance:v1.0.0-743b0814-46
