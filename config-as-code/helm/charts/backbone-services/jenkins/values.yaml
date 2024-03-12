@@ -475,13 +475,29 @@ master:
                 definition {
                   cps {
                       script("""library 'ci-libs'
-              
-              deployer(repo:'git@github.com:egovernments/DIGIT-DevOps.git', branch: 'release', helmDir: 'config-as-code/helm', environment: '{{ $job.name }}')""")
+              {{- if (eq $job.name "central-instance") }}            
+              deployer(repo:'git@github.com:egovernments/DIGIT-DevOps.git', branch: 'central-instance', helmDir: 'deploy-as-code/helm', environment: '{{ $job.name }}')""")
+                      sandbox() 
+                    }
+                }
+                disabled(false)
+              }
+              {{- else if (eq $job.name "ifix-dev") }}            
+              deployer(repo:'git@github.com:egovernments/iFix-DevOps.git', branch: 'ifix', helmDir: 'deploy-as-code/helm', environment: '{{ $job.name }}')""")
                       sandbox() 
                     }
                 }
                 disabled(false)
               }     
+              {{- else }}
+              deployer(repo:'git@github.com:HCM-LIBERIA-IMPL/DIGIT-DevOps.git', branch: 'liberia-install', helmDir: 'config-as-code/helm', environment: '{{ $job.name }}')""")
+                      sandbox() 
+                    }
+                }
+                disabled(false)
+              }  
+              {{- end }}
+   
           {{- end }}
 
               
