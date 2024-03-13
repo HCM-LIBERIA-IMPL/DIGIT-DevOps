@@ -411,7 +411,7 @@ master:
                   scm:
                     git:
                       credentialsId: "git_read"
-                      remote: "git@github.com:egovernments/CIOps.git"
+                      remote: "git@github.com:HCM-LIBERIA-IMPL/CIOps.git"
                       traits:
                       - "gitBranchDiscovery"
       system-message: | 
@@ -490,7 +490,7 @@ master:
                 disabled(false)
               }     
               {{- else }}
-              deployer(repo:'git@github.com:HCM-LIBERIA-IMPL/DIGIT-DevOps.git', branch: 'liberia-install', helmDir: 'config-as-code/helm', environment: '{{ $job.name }}')""")
+              deployer(repo:'git@github.com:HCM-LIBERIA-IMPL/DIGIT-DevOps.git', branch: 'liberia-install', helmDir: 'deploy-as-code/helm', environment: '{{ $job.name }}')""")
                       sandbox() 
                     }
                 }
