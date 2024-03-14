@@ -34,9 +34,9 @@ jenkins:
       '' 
     # add ssh git repo link above
   deploymentJobs: 
-    - name: liberia-uat
+    - name: egov-liberia-uat
       acl: [HCM-LIBERIA-IMPL*liberia-uat]   
-    - name: liberia-prod
+    - name: egov-liberia-prod
       acl: [HCM-LIBERIA-IMPL*liberia-prod]                
     - name: ci
       acl: [HCM-LIBERIA-IMPL*liberia-devops]
