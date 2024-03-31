@@ -722,6 +722,48 @@ elasticsearch-master:
     limits:
       memory: "896Mi"
 
+elasticsearch-master-infra-v1:
+  replicas: 3
+  image:
+    tag: 6.6.2
+  persistence:
+    enabled: true
+    azure:
+      - diskName: "es-master-infra-0" ## add diskName
+        diskURI: "/subscriptions/f07cf9be-deef-46d7-b025-fd11d032da4f/resourceGroups/MC_azure-liberia-prod_azure-liberia-prod_southafricanorth/providers/Microsoft.Compute/disks/es-master-infra-0"## Azure diskURI
+      - diskName: "es-master-infra-1" ## add diskName
+        diskURI: "/subscriptions/f07cf9be-deef-46d7-b025-fd11d032da4f/resourceGroups/MC_azure-liberia-prod_azure-liberia-prod_southafricanorth/providers/Microsoft.Compute/disks/es-master-infra-1"## Azure diskURI
+      - diskName: "es-master-infra-2"  ## add diskName
+        diskURI: "/subscriptions/f07cf9be-deef-46d7-b025-fd11d032da4f/resourceGroups/MC_azure-liberia-prod_azure-liberia-prod_southafricanorth/providers/Microsoft.Compute/disks/es-master-infra-2"## Azure diskURI
+
+  esJavaOpts: "-Xmx448m -Xms448m"
+  resources:
+    requests:
+      memory: "896Mi"
+    limits:
+      memory: "896Mi"
+
+elasticsearch-data-infra-v1:
+  image:
+    tag: 6.6.2
+  persistence:
+    enabled: true
+    azure:
+      - diskName: "es-data-infra-0" ## add diskName
+        diskURI: "/subscriptions/f07cf9be-deef-46d7-b025-fd11d032da4f/resourceGroups/MC_azure-liberia-prod_azure-liberia-prod_southafricanorth/providers/Microsoft.Compute/disks/es-data-infra-v1-0"## Azure diskURI
+      - diskName: "es-data-infra-1" ## add diskName
+        diskURI: "/subscriptions/f07cf9be-deef-46d7-b025-fd11d032da4f/resourceGroups/MC_azure-liberia-prod_azure-liberia-prod_southafricanorth/providers/Microsoft.Compute/disks/es-data-infra-v1-1"## Azure diskURI
+      - diskName: "es-data-infra-2"  ## add diskName
+        diskURI: "/subscriptions/f07cf9be-deef-46d7-b025-fd11d032da4f/resourceGroups/MC_azure-liberia-prod_azure-liberia-prod_southafricanorth/providers/Microsoft.Compute/disks/es-data-infra-v1-2"## Azure diskURI
+
+  esJavaOpts: "-Xmx1g -Xms1g"
+  resources:
+    requests:
+      memory: "2Gi"
+    limits:
+      memory: "2Gi"
+
+
 es-curator:
   schedule: "45 18 * * *"
   images:
