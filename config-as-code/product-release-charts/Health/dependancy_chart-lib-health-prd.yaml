@@ -30,7 +30,6 @@ modules:
       - egovio/egov-location:master-impel-60bd931a97-6
       - egovio/egov-mdms-service:v1.3.2-72f8a8f87b-12
       - egovio/egov-notification-mail:health-digit-master-6865af2823-2
-      - egovio/egov-notification-sms:v1.1.3-48a03ad7bb-10
       - egovio/egov-otp:v1.2.2-72f8a8f87b-12
       #      - egovio/egov-persister:v1.1.4-72f8a8f87b-6
       - egovio/egov-persister:v1.1.5-3371bc2-5
@@ -50,7 +49,7 @@ modules:
       - "core"
     services:
       - egovio/egf-master:v1.1.3-72f8a8f87b-15
-      - egovio/egov-hrms:health-lib-dev-e13caf6f06-76
+      - egovio/egov-hrms:health-lib-dev-6dd47e1011-79
   - name: "frontend"
     dependencies:
       - "business"
@@ -74,14 +73,14 @@ modules:
       - "core"
     services:
       # - egovio/facility:v1.0.0-a51bee1435-19
-      - egovio/facility:master-impel-82abd11612-46
+      - egovio/facility:liberia-impel-12b5a41b15-49
       - egovio/product:master-impel-9e32e9c097-22
-      - egovio/individual:master-impel-94bad42079-183
-      - egovio/transformer:master-impel-c29a7c502d-170
+      - egovio/individual:liberia-impel-a6b7c7203c-197
+      - egovio/transformer:master-impel-1c43e0eeaa-179
       - egovio/stock:master-impel-2ea4712b0d-76
       - egovio/household:master-impel-fc710d7583-110
-      - egovio/project:master-impel-82abd11612-195
-      - egovio/hcm-moz-impl:develop-liberia-f8af9ad-366
+      - egovio/project:liberia-impel-2b621706dd-202
+      - egovio/hcm-moz-impl:attendance_csv_v2-0166976-372
       - egovio/egov-mdms-create:develop-3a53c3b-3
-      - egovio/referralmanagement:master-impel-4d19e9e614-97
-      - egovio/attendance:v1.0.0-743b0814-46
+      - egovio/referralmanagement:master-impel-c3367d8067-116
+      - egovio/attendance:v1.0.0-2c51c532-54
