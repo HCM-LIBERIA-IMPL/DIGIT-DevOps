@@ -837,3 +837,25 @@ pgadmin:
   dbUrl: "jdbc:postgresql://demo-azure-rg-terraform-server.postgres.database.azure.com:5432/demo-azure-rg-terraform-db"
   environment: "DEMO"
   serverBasePath: "/pgadmin"
+
+jupyterhub:
+  hub:
+    config:
+      Authenticator:
+        admin_users:
+          - liberiauatuser
+      NativeAuthenticator:
+        minimum_password_length: 8
+        check_common_password: false
+        allowed_failed_logins: 5
+        seconds_before_next_try: 300
+      JupyterHub:
+        admin_access: true
+  ingress:
+    enabled: true
+    hosts:
+      - liberia-hcm-training.digit.org
+    tls:
+      - hosts:
+          - liberia-hcm-training.digit.org
+        secretName: liberia-hcm-training.digit.org-tls-certs

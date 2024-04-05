@@ -5,7 +5,7 @@ global:
 cluster-configs:
   namespaces:
     create: true
-    values: [ backbone, cert-manager, egov, es-cluster-v8,es-cluster, kafka-cluster, logging, monitoring, playground, zookeeper-cluster ]
+    values: [ backbone, cert-manager, egov, es-cluster-v8,es-cluster, kafka-cluster, logging, monitoring, playground, zookeeper-cluster, jupyter ]
 
   root-ingress:
     cert-issuer: letsencrypt-prod
@@ -838,3 +838,25 @@ pgadmin:
   dbUrl: "jdbc:postgresql://azure-liberia-prod-server.postgres.database.azure.com:5432/azure-liberia-prod-db"
   environment: "PROD"
   serverBasePath: "/pgadmin"
+
+jupyterhub:
+  hub:
+    config:
+      Authenticator:
+        admin_users:
+          - liberiaproduser
+      NativeAuthenticator:
+        minimum_password_length: 8
+        check_common_password: false
+        allowed_failed_logins: 5
+        seconds_before_next_try: 300
+      JupyterHub:
+        admin_access: true
+  ingress:
+    enabled: true
+    hosts:
+      - liberia-hcm.digit.org
+    tls:
+      - hosts:
+          - liberia-hcm.digit.org
+        secretName: liberia-hcm.digit.org-tls-certs
